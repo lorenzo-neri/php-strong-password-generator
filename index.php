@@ -2,10 +2,10 @@
 /* 
 Dobbiamo creare una pagina che permetta ai nostri utenti di utilizzare il nostro generatore di password (abbastanza) sicure. L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle in modo ordinato.
 
-Milestone 1
+Milestone 1 ✅
 Creare un form che invii in GET la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente. Scriviamo tutto (logica e layout) in un unico file index.php
 
-Milestone 2
+Milestone 2 ✅
 Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
 
 Milestone 3 (BONUS)
@@ -18,19 +18,7 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 
 ##################################################################################
 
-function generateRandomPassword($length)
-{
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,.<>?';
-    $password = '';
-    $charactersLength = strlen($characters);
-
-    for ($i = 0; $i < $length; $i++) {
-        $randomCharacter = $characters[rand(0, $charactersLength - 1)];
-        $password .= $randomCharacter;
-    }
-
-    return $password;
-}
+include './functions.php'
 
 ##################################################################################
 
