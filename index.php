@@ -53,7 +53,7 @@ function generateRandomPassword($length)
         <div class="row justify-content-center text-center p-2">
             <div class="col-6">
                 <h1>Strong Password Generator</h1>
-                <form action="" method="POST">
+                <form action="" method="GET">
                     <div class="form-group py-2">
                         <label for="passwordLength">Lunghezza della Password:</label>
                         <input type="number" name="passwordLength" id="passwordLength" class="form-control" required>
@@ -62,10 +62,10 @@ function generateRandomPassword($length)
                 </form>
 
                 <?php
-                if (isset($_POST['passwordLength'])) {
-                    $passwordLength = $_POST['passwordLength'];
+                if (isset($_GET['passwordLength'])) {
+                    $passwordLength = $_GET['passwordLength'];
 
-                    #var_dump($_POST['passwordLength']);
+                    #var_dump($_GET['passwordLength']);
 
                     $generatedPassword = generateRandomPassword($passwordLength);
                     echo '<h2>Password generata:</h2>';
