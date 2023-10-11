@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+var_dump($_SESSION['index']);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +21,7 @@ session_start();
         <div class="row justify-content-center text-center p-2">
             <div class="col-6">
                 <h1>Nuova Password</h1>
-
+                <?php include __DIR__ . '/index.php' ?>
 
             </div>
         </div>

@@ -18,8 +18,6 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 
 ##################################################################################
 
-session_start();
-
 include __DIR__ . '/functions.php';
 
 ##################################################################################
