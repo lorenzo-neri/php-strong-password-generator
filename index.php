@@ -16,6 +16,24 @@ Milestone 4 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
 */
 
+##################################################################################
+
+function generateRandomPassword($length)
+{
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,.<>?';
+    $password = '';
+    $charactersLength = strlen($characters);
+
+    for ($i = 0; $i < $length; $i++) {
+        $randomCharacter = $characters[rand(0, $charactersLength - 1)];
+        $password .= $randomCharacter;
+    }
+
+    return $password;
+}
+
+##################################################################################
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +48,36 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 
 <body>
 
+    <div class="container">
+
+        <div class="row justify-content-center text-center p-2">
+            <div class="col-6">
+                <h1>Strong Password Generator</h1>
+                <form action="" method="POST">
+                    <div class="form-group py-2">
+                        <label for="passwordLength">Lunghezza della Password:</label>
+                        <input type="number" name="passwordLength" id="passwordLength" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Genera Password</button>
+                </form>
+
+                <?php
+                if (isset($_POST['passwordLength'])) {
+                    $passwordLength = $_POST['passwordLength'];
+
+                    #var_dump($_POST['passwordLength']);
+
+                    $generatedPassword = generateRandomPassword($passwordLength);
+                    echo '<h2>Password generata:</h2>';
+                    echo '<p>' . $generatedPassword . '</p>';
+                }
+                ?>
+
+            </div>
+        </div>
+
+
+    </div>
 
 
 
