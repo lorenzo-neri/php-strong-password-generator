@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function generateRandomPassword($length)
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,.<>?';

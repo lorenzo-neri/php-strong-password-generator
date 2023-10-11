@@ -18,7 +18,9 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 
 ##################################################################################
 
-include './functions.php'
+session_start();
+
+include __DIR__ . '/functions.php';
 
 ##################################################################################
 
